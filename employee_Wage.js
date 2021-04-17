@@ -1,5 +1,6 @@
 console.log("Welcome to Employee Wage Computation program");
 
+//constant values
 const IS_PART_TIME = 1;
 const IS_FULL_TIME = 2;
 const PART_TIME_HOUR = 4;
@@ -8,6 +9,7 @@ const WAGE_PER_HOUR = 20;
 const NUM_OF_DAYS = 20;
 const MAX_WORKING_HOUR = 100;
 
+//UC1 - function to check if employee is present or absent
 const checkAttendence = () => {
     const IS_ABSENT = 0;
     let empCheck = Math.floor(Math.random() * 10) % 2;
@@ -18,6 +20,8 @@ const checkAttendence = () => {
     }
 }
 
+
+//UC2,3,4 - function to calculate daily employee Wage for full time or part time using switch case
 const calcWage = () => {
     let empHR = 0;
     let empCheck = Math.floor(Math.random()*10)%3;
@@ -36,6 +40,8 @@ const calcWage = () => {
     console.log("Employee Wage: "+ empWage);
 }
 
+
+//UC5 - function to calculate the wage for a month
 const calWageForMonth = () => {
     function getWorkingHours(empCheck){
         switch (empCheck){
@@ -58,6 +64,8 @@ const calWageForMonth = () => {
     console.log("Total Employee Hours: "+ totalEmpHrs +", Total Employee Wage : " + empWage);
 } 
 
+
+//UC 6,7 - function to calculate wages till a condition of maximum hours or maximum days is reached
 const calcWageForConditon = () => {
     function getWorkingHours(empCheck){
         switch (empCheck){
@@ -82,6 +90,8 @@ const calcWageForConditon = () => {
     console.log("Total Working Days: "+ totalWorkingDays +", Total Employee Hours: "+ totalEmpHrs +", Total Employee Wage : " + empWage);
 }     
 
+
+//UC 8,9 - function to store the day, the daily working hours, daily wage and the total wage of an employee
 const newEmpWage = () => {
     function getWorkingHours(empCheck){
         switch(empCheck){
@@ -112,8 +122,8 @@ const newEmpWage = () => {
                 dailyHours:empHrs,
                 dailyWage: calcDailyWage(empHrs),
                 toString() {
-                    return '\nDay' +this.dayNum + ' => Working Hours : ' + this.dailyHours +
-                            ' And Wage Earned : ' + this.dailyWage
+                    return '\nDay' +this.dayNum + ' -> Working Hours is ' + this.dailyHours +
+                            ' And Wage Earned is ' + this.dailyWage
                 },
             }
         );
